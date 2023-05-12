@@ -1,0 +1,13 @@
+{
+    "Roles":[
+        {"name":"Owner"},
+        {"name":"Manager"},
+        {"name":"Guests"}
+    ],
+
+    "Permits":[
+        {"name":"Create Category"},
+        {"name":"Delete Category"},
+        {"name":"Edit Category"}
+    ]
+}

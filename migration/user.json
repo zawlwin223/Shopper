@@ -1,0 +1,14 @@
+[
+    {
+        "name":"Owner",
+        "email":"Owner@gmail.com",
+        "ph_no":"09332100",
+        "password":"223657"
+    },
+    {
+        "name":"Manager",
+        "email":"Manager@gmail.com",
+        "ph_no":"07687970",
+        "password":"2789657"
+    }
+]

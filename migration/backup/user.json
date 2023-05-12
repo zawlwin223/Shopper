@@ -1,0 +1,22 @@
+[
+    {
+      "_id": "6425d594b81d5ef065b29491",
+      "name": "Owner",
+      "email": "Owner@gmail.com",
+      "ph_no": "09332100",
+      "password": "$2a$10$BpU27mS3WOEqQw1xYHahTeuAZ40MehyyJLc61i.0ZhPHXqs5qFl.S",
+      "roles": [],
+      "permits": [],
+      "__v": 0
+    },
+    {
+      "_id": "6425d594b81d5ef065b29492",
+      "name": "Manager",
+      "email": "Manager@gmail.com",
+      "ph_no": "07687970",
+      "password": "$2a$10$Dvqasw3RZobyXr.dfTQm9eYeNyWbaHapGKJ5rPXJ2V5R3fvRdKZ7y",
+      "roles": [],
+      "permits": [],
+      "__v": 0
+    }
+  ]
