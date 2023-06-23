@@ -1,7 +1,7 @@
 let router = require ("express").Router();
 let role = require ("../controller/role_controller.js");
 let {Schema} = require ("../util/schema.js");
-let {validateBody,validateId} = require ("../util/validate.js");
+let {validateBody,validateId, hasAnyRole} = require ("../util/validate.js");
 
 router.post("/",role.add);
 router.get("/",role.all);

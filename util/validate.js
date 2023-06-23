@@ -58,5 +58,44 @@ module.exports={
        
     },
 
+    hasAnyRole:(roles)=>{
+        return (req,res,next)=>{
+             let bol = false;
+            for(let i=0;i<=roles.length;i++){
+                let find = req.user.roles.find(ro=>ro.name == roles[i]);
+                if(find){
+                   bol = true; 
+                }
+               
+            }
+            if(bol==true){
+                next();
+            }else{
+                new Error(next("You dont have permission with this role"))
+            }
+           
+           
+        }
+    },
+    hasAnyPermit:(permits)=>{
+        return (req,res,next)=>{
+             let bol = false;
+            for(let i=0;i<=roles.length;i++){
+                let find = req.user.permits.find(ro=>ro.name == permits[i]);
+                if(find){
+                   bol = true; 
+                }
+               
+            }
+            if(bol==true){
+                next();
+            }else{
+                new Error(next("You dont have permission with this permit"))
+            }
+           
+           
+        }
+    }
+
 
 }
