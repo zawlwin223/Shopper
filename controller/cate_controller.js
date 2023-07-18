@@ -11,7 +11,13 @@ const add = async (req,res,next)=>{
     }
 }
 const get = async (req,res,next)=>{
-    let result = await DB.find();
+    let result = await DB.find().populate({
+        path:"subcate",
+        populate:{
+            path:"childcats",
+            model:"Childcat"
+        }
+    });
     helper.fmsg(res,"Success",result)
 }
 

@@ -18,14 +18,20 @@ app.use(fileUpload());
 let role = require ("./routes/role_route.js");
 let permit = require ("./routes/permit_route.js");
 let user = require ("./routes/user_route.js");
-let cate = require ("./routes/cate_route.js")
+let cate = require ("./routes/cate_route.js");
+let subcat = require ("./routes/subcat_route.js");
+let childcat = require ("./routes/childcate_route.js");
+let tag = require ("./routes/tag_route.js")
 let { hasAnyRole, validateToken }= require ("./util/validate.js");
 
 
 app.use("/role",validateToken(),hasAnyRole(["Owner","Manager","Supervisor"]),role);
 app.use("/permit",permit);
 app.use("/user",user);
-app.use("/category",cate)
+app.use("/category",cate);
+app.use("/subcategory",subcat);
+app.use("/childcategory",childcat);
+app.use("/tag",tag)
 
 
 app.use((err,req,res,next)=>{
