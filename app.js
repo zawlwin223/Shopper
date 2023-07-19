@@ -21,7 +21,9 @@ let user = require ("./routes/user_route.js");
 let cate = require ("./routes/cate_route.js");
 let subcat = require ("./routes/subcat_route.js");
 let childcat = require ("./routes/childcate_route.js");
-let tag = require ("./routes/tag_route.js")
+let tag = require ("./routes/tag_route.js");
+let delivery = require ("./routes/delivery_route.js");
+let warranty = require ("./routes/warranty_route.js")
 let { hasAnyRole, validateToken }= require ("./util/validate.js");
 
 
@@ -31,8 +33,9 @@ app.use("/user",user);
 app.use("/category",cate);
 app.use("/subcategory",subcat);
 app.use("/childcategory",childcat);
-app.use("/tag",tag)
-
+app.use("/tag",tag);
+app.use("/delivery",delivery)
+app.use("/warranty",warranty)
 
 app.use((err,req,res,next)=>{
     console.log(err.status)
