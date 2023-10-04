@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 let saveSingleFile = async (req, res, next) => {
+   console.log(req.body)
    if(req.files){
       if(req.files.image){
          let filename = req.files.image.name;
@@ -26,6 +27,7 @@ let saveMultipleFile = async (req, res, next) => {
       file.mv(`./uploads/${filename}`);
    });
    req.body["images"] = filenames;
+  
    next();
 }
 

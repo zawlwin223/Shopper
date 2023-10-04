@@ -8,19 +8,22 @@ const all = async(req,res,next)=>{
 }
 
 const post = async (req,res,next)=>{
+    
     let name = await DB.findOne({name:req.body.name});
     if(name){
-        next(new Error("Name is already in use"))
+        new Error(next("Name is already in use"))
+       
     }else{
         let subcat = await subcatDB.findById(req.body.subcat);
-        console.log(subcat)
+      
         if(subcat){
            
             let result=await new DB(req.body).save();
             await subcatDB.findByIdAndUpdate(subcat._id,{$push:{childcats:result._id}})
             helper.fmsg(res,"Success",result)
         }else{
-            next(new Error("Subcat Id is incorrect"))
+            new Error(next("Subcat Id is incorrect"))
+          
         }
        
     }

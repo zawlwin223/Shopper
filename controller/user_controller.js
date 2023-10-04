@@ -108,4 +108,5 @@ let removePermit = async (req,res,next)=>{
 
   
 }
+
 module.exports = {register,login,addrole,removerole,addPermit,removePermit}
