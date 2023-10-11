@@ -48,10 +48,6 @@ app.use("/warranty",warranty);
 app.use("/product",product);
 app.use("/order",order)
 
-app.use((err,req,res,next)=>{
-    console.log(err.status)
-    res.status(500).json({con:"False",msg:err})
-});
 
 function defaultdata(){
     let migrate = require("./migration/migrator");
@@ -77,8 +73,13 @@ io.of("/chat").use(async(Socket,next)=>{
         next(new Error("Tokenization Error"))
     }
 }).on("connection",Socket=>{
-    console.log(Socket.user)
+    require ("./util/chat").initialize(io,Socket)
 })
+
+app.use((err,req,res,next)=>{
+    console.log(err.status)
+    res.status(500).json({con:"False",msg:err})
+});
 server.listen(process.env.PORT,()=>{
     console.log("Server is working")
 })
